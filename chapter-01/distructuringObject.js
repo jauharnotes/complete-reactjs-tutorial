@@ -1,3 +1,5 @@
+import { func } from "prop-types";
+
 const sandwich = {
   bread: "lontong sayur",
   meat: "mendoan",
@@ -52,3 +54,49 @@ const lordify3 = ({ spouse: { firsName } }) => {
 };
 
 lordify3(regularPerson3);
+
+// object literal enhancement
+const name = "Johar";
+const elevation = 1993;
+
+const funHike = { name, elevation };
+console.log(funHike);
+
+// create methods with object enhancement or restructuring
+// const book = "Tipping Point";
+// const author = "Malcolm Gladwell";
+// const print = function () {
+//   console.log(`I bought a book ${this.book} by ${this.author}`);
+// };
+
+// const foo = { book, author, print };
+// foo.print();
+
+// When defining object methods, it’s no longer necessary to use the function keyword:
+// old
+var skier = {
+  name: name,
+  sound: sound,
+  powerYell: function () {
+    var yell = this.sound.toUpperCase();
+    console.log(`${yell} ${yell} ${yell}!!!`);
+  },
+  speed: function (mph) {
+    this.speed = mph;
+    console.log("speed:", mph);
+  },
+};
+
+// new
+const skier2 = {
+  name,
+  sound,
+  powerYell() {
+    let yell = this.sound.toUpperCase();
+    console.log(`${yell} ${yell} ${yell}!!!`);
+  },
+  speed(mph) {
+    this.speed = mph;
+    console.log("speed:", mph);
+  },
+};
