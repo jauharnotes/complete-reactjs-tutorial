@@ -97,3 +97,47 @@ let add2 = function add() {
 };
 
 add2();
+
+const log = (message) => {
+  console.log(message);
+};
+
+const obj = {
+  message: "They can be added to object like variable",
+  log(message) {
+    console.log(message);
+  },
+};
+
+obj.log(obj.message);
+
+// arrays in JavaScript:
+const message = [
+  "They can be inserted into arrays",
+  (message) => console.log(message),
+  "Like variable",
+  (message) => console.log(message),
+];
+
+message[1](message[0]);
+message[3](message[2]);
+
+// Functions can be sent to other functions as arguments, just like other variables:
+const insideFn = (logger) => {
+  logger("They can be sent to other function as argument");
+};
+
+insideFn((message) => console.log(message));
+
+// They can also be returned from other functions, just like variables:
+const createScream = function (logger) {
+  return function (message) {
+    logger(message.toUpperCase() + "!!!");
+  };
+};
+
+const scream = createScream((message) => console.log(message));
+
+scream("Functions can be returned from other function");
+scream("createScream return a function");
+scream("scream invokes that returned function");

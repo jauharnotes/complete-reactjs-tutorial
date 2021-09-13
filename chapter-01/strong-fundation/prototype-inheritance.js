@@ -25,3 +25,23 @@ class Vacation1 {
 
 const trip = new Vacation1("santiago, Chile", 7);
 trip.print();
+
+class Expense1 extends Vacation2 {
+  construktor(destination, lengths, gear) {
+    super(destination, lengths);
+    this.gear = gear;
+  }
+
+  print() {
+    super.print();
+    console.log(`Bring your ${this.gear.join(" and your ")}`);
+  }
+}
+
+const trip2 = new Expense1("Mt. Whitney", 3, [
+  "sumglasses",
+  "prayer flag",
+  "cameras",
+]);
+
+trip2.print();
